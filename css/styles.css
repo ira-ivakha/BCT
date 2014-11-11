@@ -1,25 +1,70 @@
+
+
+
+@font-face {
+    font-family: 'helveticabold';
+    src: url('../fonts/helvetica-bold-webfont.eot');
+    src: url('../fonts/helvetica-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/helvetica-bold-webfont.woff2') format('woff2'),
+    url('../fonts/helvetica-bold-webfont.woff') format('woff'),
+    url('../fonts/helvetica-bold-webfont.ttf') format('truetype'),
+    url('../fonts/helvetica-bold-webfont.svg#helveticabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'helveticaregular';
+    src: url('../fonts/948646-webfont.eot');
+    src: url('../fonts/948646-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/948646-webfont.woff2') format('woff2'),
+    url('../fonts/948646-webfont.woff') format('woff'),
+    url('../fonts/948646-webfont.ttf') format('truetype'),
+    url('../fonts/948646-webfont.svg#helveticaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'lucidagrande';
+    src: url('../fonts/lucida_grande-webfont.eot');
+    src: url('../fonts/lucida_grande-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/lucida_grande-webfont.woff2') format('woff2'),
+    url('../fonts/lucida_grande-webfont.woff') format('woff'),
+    url('../fonts/lucida_grande-webfont.ttf') format('truetype'),
+    url('../fonts/lucida_grande-webfont.svg#lucida_granderegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*----------------------------------------------------------------------------------*/
 /*------------------------------RESET DEFAULT STYLES--------------------------------*/
 /*----------------------------------------------------------------------------------*/
 html,body                       { width:100%; height:100%; }
 body                            { padding:0; margin:0; font:14px Verdana, Arial, sans-serif; background:#fff; color:#000; }
-div,p,a,span,em,strong,img,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,form,fieldset,label,select,checkbox,input,textarea {
+div,p,a,span,em,strong,img,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,form,fieldset,label,select,input,textarea {
 	padding:0;
 	margin:0;
 	outline:none;
 
 }
-ul{
-    list-style:none;        { font-size:12px; vertical-align:middle; }
+ul{    list-style:none;     }
 textarea                       { vertical-align:top; }
-:focus
-}
 select, input, textarea           { outline:none; }
 input[type=submit]             { cursor:pointer; }
 img, fieldset                  { border:0; }
 table                          { border-collapse:collapse; border-spacing:0; }
-a:link, a:visited              { fontfamily:12px "Lucida Grande", sans-serif; color:#00661a; text-decoration:underline; }
-a:hover                        { text-decoration:none; }
+a:link, a:visited              { font-family:"Lucida Grande", sans-serif; font-size:12px; color:#00661a; text-decoration:none; }
+a:hover                        { text-decoration:underline; }
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------DEFAULT CLASSES------------------------------*/
 /*----------------------------------------------------------------------------------*/
@@ -47,7 +92,9 @@ a:hover                        { text-decoration:none; }
 /*----------------------------------------------------------------------------------*/
 header{
     background:#000;
-
+    overflow:hidden;
+    margin:0;
+    padding:0;
     position:relative;
 }
 nav{
@@ -56,20 +103,65 @@ nav{
     top:0;
     width:100%;
     text-align:center;
-    background:#000;
+    background: #1d1d1d; /* Old browsers */
+    background: -moz-linear-gradient(top, #1d1d1d 0%, #000000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1d1d1d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #1d1d1d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #1d1d1d 0%,#000000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #1d1d1d 0%,#000000 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #1d1d1d 0%,#000000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1d1d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    height:55px;
 }
-header .top-menu{
+li .top-menu{
     display:inline-block;
     text-transform:uppercase;
-    font-size:1.2em;
-    font-weight:bold;
-    color:#cacaca;
-    line-height:55px;
+    font-family:"helveticabold", sans-serif;
+    font-size:1.14285em;
+    font-weight:600;
+    color:#a0a0a0;
+    line-height:30px;
+    padding:15px 30px;
+    margin:0;
+    vertical-align:top;
 }
-.header .top-menu:hover, .top-menu.active{
+.top-nav li{
+    display:inline-block;
+    text-align:center;
+    background:url('../images/top-splitter.png') right 15px no-repeat;
+}
+.top-nav{
+    position:absolute;
+    top:0;
+    display:inline-block;
+    background:url('../images/top-splitter.png') left 15px no-repeat;
+}.left{
+     right:50%;
+     text-align:right;
+     margin-right:95px;
+}
+.right{
+    left:50%;
+    text-align:left;
+    margin-left:95px;
+}
+.logo{
+    position:absolute;
+    top:0;
+    margin-left:-80px;
+    left:50%;
+    display:inline-block;
+    height:180px;
+    width:160px;
+    background:url('../images/logo-top.png') center -10px no-repeat;
+}
+.logo:hover{
+    opacity:0.7;
+}
+.top-menu:hover, .top-menu.active{
     color:#fff;
+    text-decoration:none;
 }
-
 .top-background{
     max-height:100%;
     height:auto;
@@ -81,14 +173,61 @@ header .top-menu{
     font-size:40px;
     position:absolute;
     width:60%;
-    top:30%;
+    top:32%;
     left:20%;
     text-align:center;
     color:#fff;
+    text-shadow:1px 1px 2px #444;
 }
 .slogan-ukr{
     font-size:23px;
     display:block;
+}
+header .mail_us{
+    position:absolute;
+    top:47%;
+    left:50%;
+    margin-left:-7em;
+    box-shadow:0 0 0 0.5em rgba(255, 255, 255, 0.5);
+    border-radius:8px;
+    font-size:1.14825em;
+    color:#fff;
+    font-family:"helveticabold", sans-serif;
+    text-transform:uppercase;
+    font-weight:bold;
+    width:14em;
+    text-align:center;
+    padding:1em;
+    background:#0e490e;
+}
+header .consultation{
+    position:absolute;
+    top:62%;
+    left:50%;
+    margin-left:-7.5em;
+    font-size:1.14825em;
+    color:#fff;
+    font-family:"helveticabold", sans-serif;
+    text-transform:lowercase;
+    font-weight:normal;
+    text-decoration:underline;
+    width:15em;
+    text-align:center;
+    box-shadow:inset -1px -1px 3px  rgba(255, 255, 255, 0.3);
+    border-radius:10px;
+    background:rgba(7, 5, 4, 0.6);
+    padding:0.75em;
+}
+.about-us{
+    position:absolute;
+    bottom:0;
+    left:0;
+    color:#fff;
+    width:100%;
+    background:rgba(0, 0, 0, 0.5) url('../images/logo.png') 10% center no-repeat;
+    font-family: Georgia, times, serif;
+    font-size:1.4285em;
+    padding:1em 20% 1em 25% ;
 }
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------NAV------------------------------------------*/
@@ -97,7 +236,89 @@ header .top-menu{
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------CONTENT--------------------------------------*/
 /*----------------------------------------------------------------------------------*/
+.page-header, .founder-name{
+    font-size:24px;
+    font-weight:bold;
+    color:#00661a;
+    text-shadow:1px 1px 2px #888;
+    border:none;
+    text-align:center;
+    padding:30px;
+    line-height:1em;
+}
+.founder-name{
+    padding-bottom:5px;
 
+}
+.big-thumb-img{
+    border-radius:100%;
+    height:100%;
+    width:100%;
+    /*border:4px solid #fff;
+    box-shadow:0px 1px 3px  #444, inset 0 -1px 3px  #000;*/
+    display:inline-block;
+}
+.thumb-link{
+
+    display:inline-block;
+    position:relative;
+}
+.thumb-link:after{
+    background:url('../images/border.png') center no-repeat;
+    height:100%;
+    width:100%;
+    display:block;
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    background-size:cover;
+}
+.founders {
+    background: #dddddd; /* Old browsers */
+    background: -moz-linear-gradient(top, #dddddd 53%, #d0d0d0 99%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(53%, #dddddd), color-stop(99%, #d0d0d0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #dddddd 53%, #d0d0d0 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #dddddd 53%, #d0d0d0 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #dddddd 53%, #d0d0d0 99%); /* IE10+ */
+    background: linear-gradient(to bottom, #dddddd 53%, #d0d0d0 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dddddd', endColorstr='#d0d0d0', GradientType=0); /* IE6-9 */
+    padding-bottom:30px;
+    border-bottom:1px solid #999;
+}
+.founder-info{
+    text-align:center;
+
+}
+.founder-info p{
+
+    margin:0 80px;
+    font-size:20px;
+    text-shadow:1px 1px 1px #888;
+}
+.practices{
+    background: #e2e2e2; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e2e2e2 31%, #dddddd 99%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(31%,#e2e2e2), color-stop(99%,#dddddd)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e2e2e2 31%,#dddddd 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e2e2e2 31%,#dddddd 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e2e2e2 31%,#dddddd 99%); /* IE10+ */
+    background: linear-gradient(to bottom,  #e2e2e2 31%,#dddddd 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+    border-top:1px solid #fff;
+
+}
+.practice-list{
+    font-family:'helveticabold', verdana, sans-serif;
+    font-weight:bold;
+    text-shadow:1px 0   1px #888;
+    color:#111;
+    line-height:120%;
+}
+.practice-list li{
+    margin:0.5em 0;
+
+}
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------SIDEBAR--------------------------------------*/
 /*----------------------------------------------------------------------------------*/
